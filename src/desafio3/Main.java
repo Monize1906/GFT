@@ -8,8 +8,15 @@ public class Main {
 	
 	public static void main(String[] args) {
 		System.out.println("Digite um valor");
+		ICMS icms = new ICMS();
+		COFINS cofins = new COFINS();
+		IPI ipi = new IPI();
 		double num = readDouble();
-		System.out.println();
+		double soma =  icms.calcularImposto(num) + cofins.calcularImposto(num) + ipi.calcularImposto(num);
+		System.out.println("ICMS:" + icms.calcularImposto(num));
+		System.out.println("IPI:" + cofins.calcularImposto(num));
+		System.out.println("COFINS:" + ipi.calcularImposto(num));
+		System.out.println("Valor FINAL:" +soma);
 	}
 
 
